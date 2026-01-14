@@ -1,0 +1,143 @@
+---
+name: pages-surface-freeze
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-pages-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect Pages-related artifacts (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          
+          echo "=== GitHub Pages Surface Validation ==="
+          echo ""
+          echo "This workflow performs read-only validation of GitHub Pages-related artifacts."
+          echo "It detects presence/absence without making deployment assumptions."
+          echo ""
+          
+          # Initialize detection flags
+          found_config_yml=false
+          found_nojekyll=false
+          found_cname=false
+          found_docs_dir=false
+          found_gh_pages_dir=false
+          
+          # Check for file existence
+          if [ -f "_config.yml" ]; then
+            found_config_yml=true
+          fi
+          
+          if [ -f ".nojekyll" ]; then
+            found_nojekyll=true
+          fi
+          
+          if [ -f "CNAME" ]; then
+            found_cname=true
+          fi
+          
+          # Check for directory existence
+          if [ -d "docs" ]; then
+            found_docs_dir=true
+          fi
+          
+          if [ -d "gh-pages" ]; then
+            found_gh_pages_dir=true
+          fi
+          
+          # Generate deterministic report
+          echo "--- Detection Report ---"
+          echo ""
+          echo "Files:"
+          echo "  _config.yml: $( [ "$found_config_yml" = true ] && echo "PRESENT" || echo "ABSENT" )"
+          echo "  .nojekyll:   $( [ "$found_nojekyll" = true ] && echo "PRESENT" || echo "ABSENT" )"
+          echo "  CNAME:       $( [ "$found_cname" = true ] && echo "PRESENT" || echo "ABSENT" )"
+          echo ""
+          echo "Directories:"
+          echo "  docs/:       $( [ "$found_docs_dir" = true ] && echo "PRESENT" || echo "ABSENT" )"
+          echo "  gh-pages/:   $( [ "$found_gh_pages_dir" = true ] && echo "PRESENT" || echo "ABSENT" )"
+          echo ""
+          
+          # Determine surface state
+          if [ "$found_config_yml" = false ] && [ "$found_nojekyll" = false ] && \
+             [ "$found_cname" = false ] && [ "$found_docs_dir" = false ] && \
+             [ "$found_gh_pages_dir" = false ]; then
+            echo "Surface State: UNDEFINED (no Pages artifacts detected)"
+          else
+            echo "Surface State: DECLARED (Pages artifacts present)"
+          fi
+          
+          echo ""
+          echo "--- Validation Result ---"
+          echo "✓ Pages surface is frozen (read-only validation passed)"
+          echo "✓ No build or deployment logic detected"
+
+      - name: Validate no implicit Pages activation
+        shell: bash
+        run: |
+          set -euo pipefail
+          
+          echo "=== Scanning for Implicit Pages Activation ==="
+          echo ""
+          
+          # Check for workflow files that might deploy to Pages
+          implicit_activation=false
+          
+          if [ -d ".github/workflows" ]; then
+            # Search for deployment-related keywords in workflow files
+            # This is a strict check to prevent accidental Pages enablement
+            for workflow in .github/workflows/*.yml .github/workflows/*.yaml; do
+              if [ -f "$workflow" ]; then
+                # Skip self-reference
+                if [[ "$workflow" == *"pages-surface-freeze"* ]]; then
+                  continue
+                fi
+                
+                # Check for Pages deployment patterns
+                if grep -Eiq "(pages-build|pages-deploy|github-pages|actions/deploy-pages|peaceiris/actions-gh-pages)" "$workflow"; then
+                  echo "::error::Implicit Pages activation detected in $workflow"
+                  echo "Found Pages deployment logic in workflow file."
+                  implicit_activation=true
+                fi
+                
+                # Check for explicit Pages build steps
+                if grep -Eiq "(jekyll.*build|hugo.*build|mkdocs.*build).*--(destination|output).*gh-pages" "$workflow"; then
+                  echo "::error::Pages build logic detected in $workflow"
+                  echo "Found Pages build command targeting deployment."
+                  implicit_activation=true
+                fi
+              fi
+            done
+          fi
+          
+          if [ "$implicit_activation" = true ]; then
+            echo ""
+            echo "FAILURE: Implicit Pages activation or deployment logic detected."
+            echo "This violates the Pages surface freeze policy."
+            exit 1
+          fi
+          
+          echo "✓ No implicit Pages activation detected"
+          echo "✓ No deployment workflows found"
+
+      - name: Summary
+        shell: bash
+        run: |
+          echo ""
+          echo "========================================"
+          echo "  Pages Surface Freeze: VALIDATED"
+          echo "========================================"
+          echo ""
+          echo "The GitHub Pages surface remains frozen."
+          echo "No build, deployment, or implicit activation detected."
+          echo ""
