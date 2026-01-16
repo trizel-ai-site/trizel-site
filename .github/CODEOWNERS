@@ -1,0 +1,17 @@
+# ===============================
+# Governance CODEOWNERS
+# Repository: trizel-site
+# Scope: Governance & Publishing Control
+# ===============================
+
+# Governance-controlled registry
+/docs/ACCOUNT_REGISTRY.md   @trizel-ai-site/governance-approvers
+
+# GitHub governance & automation
+/.github/workflows/         @trizel-ai-site/governance-approvers
+/.github/CODEOWNERS         @trizel-ai-site/governance-approvers
+
+# Pages / domain sensitive files
+CNAME                       @trizel-ai-site/governance-approvers
+docs/CNAME                  @trizel-ai-site/governance-approvers
+static/CNAME                @trizel-ai-site/governance-approvers
