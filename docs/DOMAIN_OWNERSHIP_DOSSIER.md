@@ -16,7 +16,7 @@
 
 ## Registrar and Provider Context
 
-**Provider Context:** Domain appears to be managed through **Google Workspace** or **Squarespace Domains** based on account UI evidence.
+**Provider Context:** Domain is managed through **Google Workspace** or **Squarespace Domains** per account UI evidence.
 
 **Management Interface:** Domain DNS settings are accessible through the provider's control panel.
 
