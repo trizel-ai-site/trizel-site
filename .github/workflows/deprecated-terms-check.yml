@@ -1,0 +1,93 @@
+---
+name: deprecated-terms-check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-deprecated-terms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for deprecated term THEORY
+        shell: bash
+        run: |
+          set -euo pipefail
+          
+          echo "=== Deprecated Terms Check ==="
+          echo ""
+          echo "Checking for deprecated terminology that violates Layer-0 governance."
+          echo ""
+          
+          # Define deprecated term (case-insensitive)
+          deprecated_term="THEORY"
+          
+          # Files to check (exclude this workflow and git directory)
+          check_files=$(find . -type f \
+            \( -name "*.md" -o -name "*.html" -o -name "*.yml" -o -name "*.yaml" \) \
+            ! -path "./.git/*" \
+            ! -path "./.github/workflows/deprecated-terms-check.yml")
+          
+          # Check for occurrences
+          violations_found=false
+          
+          if echo "$check_files" | xargs grep -in "$deprecated_term" 2>/dev/null; then
+            echo ""
+            echo "::error::Deprecated term '$deprecated_term' found in repository"
+            echo "FAILURE: The term 'THEORY' must be replaced with 'EPISTEMIC ANALYSIS FRAME'"
+            echo ""
+            echo "Layer-0 governance requires use of 'EPISTEMIC ANALYSIS FRAME' terminology."
+            echo "See docs/EPISTEMIC_ANALYSIS_FRAME.md for the standard definition."
+            violations_found=true
+          fi
+          
+          if [ "$violations_found" = true ]; then
+            exit 1
+          fi
+          
+          echo "✓ No deprecated terms found"
+          echo "✓ Terminology compliant with Layer-0 governance"
+
+      - name: Validate EPISTEMIC ANALYSIS FRAME definition exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          
+          echo ""
+          echo "=== Validating Standard Definition ==="
+          echo ""
+          
+          definition_file="docs/EPISTEMIC_ANALYSIS_FRAME.md"
+          
+          if [ ! -f "$definition_file" ]; then
+            echo "::error::Standard definition file missing: $definition_file"
+            echo "FAILURE: EPISTEMIC ANALYSIS FRAME definition must be present"
+            exit 1
+          fi
+          
+          # Verify the definition contains the required phrase
+          if ! grep -q "EPISTEMIC ANALYSIS FRAME" "$definition_file"; then
+            echo "::error::Definition file does not contain 'EPISTEMIC ANALYSIS FRAME'"
+            exit 1
+          fi
+          
+          echo "✓ Standard definition file exists: $definition_file"
+          echo "✓ Definition contains required terminology"
+
+      - name: Summary
+        shell: bash
+        run: |
+          echo ""
+          echo "========================================"
+          echo "  Deprecated Terms Check: PASSED"
+          echo "========================================"
+          echo ""
+          echo "Terminology is compliant with Layer-0 governance."
+          echo "Standard EPISTEMIC ANALYSIS FRAME definition is present."
+          echo ""
