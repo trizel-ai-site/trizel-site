@@ -149,6 +149,12 @@ This domain binding:
 
 This is a **presentation binding only**. The domain serves static HTML/CSS content for display purposes. All governance, authority, and decision-making reside in Layer-0 (trizel-core repository).
 
+### Authorized Exception Note
+
+This custom domain binding is an **authorized governance decision** that supersedes the general Layer-2 constraint documented in index.html which lists "custom domains" among forbidden changes. That constraint applies to the initial site creation PR and normal operational changes. This domain binding is explicitly authorized through governance process and documented in this dedicated pull request per TRIZEL standards.
+
+**Rationale:** Custom domain binding enhances professional presentation while maintaining Layer-2 compliance (no logic, no analysis, presentation-only). The CNAME file is a passive configuration file that instructs GitHub Pages where to serve the static content - it contains no executable code or logic.
+
 ---
 
 ## Governance and Auditability
