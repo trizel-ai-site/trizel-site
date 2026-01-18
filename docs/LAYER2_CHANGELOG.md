@@ -108,6 +108,100 @@ Each entry includes:
 
 ---
 
+## 2026-01-18: Governance Compliance Implementation
+
+### Change Set 2: Critical Governance Requirements
+
+**Date:** 2026-01-18  
+**Type:** Compliance (Critical)  
+**Priority:** Critical (Governance Mandate)
+
+**Changes Made:**
+
+1. **Updated `index.html` - Header Structure**
+   - Added AUTO DZ ACT memory marker under TRIZEL logo
+   - Added "Foundational Epistemic Memory Marker" label
+   - Added Layer-2 badge in header
+   - Updated tagline to "Presentation Only — No Analysis — No Execution"
+   - Restructured header for better visual hierarchy
+
+2. **Updated `index.html` - Layer-2 Notice Section**
+   - Created new prominent disclaimer section (#layer-notice)
+   - Explicit statement: "Layer-2 (Presentation/Display only)"
+   - Clear statement: "no scientific content, performs no analysis"
+   - Added inline link to trizel-core as canonical governance authority
+   - Positioned as first content section (high visibility)
+
+3. **Updated `index.html` - Governance & References Section**
+   - Renamed "References" to "Governance & References"
+   - Created prominent "Canonical Governance Authority (Layer-0)" subsection
+   - Added large, styled link to trizel-core repository
+   - Added explanatory note about Layer-0 authority
+   - Reorganized documentation links by category
+   - Added links to new audit documentation
+
+4. **Updated `assets/css/style.css` - Enhanced Styling**
+   - Added CSS variables for accent-green and card-highlight colors
+   - Styled header with flexbox layout for brand/meta split
+   - Styled AUTO DZ ACT memory marker (monospace, uppercase, green)
+   - Styled memory label (small, italic, muted)
+   - Styled Layer-2 badge (green, bold, rounded)
+   - Created disclaimer card style (highlighted background, left border)
+   - Created governance-primary section style (blue background, bordered)
+   - Enhanced typography hierarchy and spacing
+   - Added hover states and improved visual polish
+
+**Rationale:**
+- **Work Plan Item 3:** "Implement minimal additions (ONLY if missing)"
+- **Critical governance requirement:** AUTO DZ ACT must appear as memory marker
+- **High priority:** Governance authority (trizel-core) must be prominently linked
+- **Medium priority:** Layer-2 disclaimer must be explicit and visible
+- All requirements identified in LAYER2_COMPLIANCE_AUDIT.md
+
+**Evidence:**
+- `index.html` - Lines 10-22 (header with AUTO DZ ACT)
+- `index.html` - Lines 25-30 (Layer-2 Notice section)
+- `index.html` - Lines 59-88 (Governance & References section)
+- `assets/css/style.css` - Complete enhancement (58 lines)
+
+**Compliance Verification:**
+- [x] No JavaScript files present (verified: 0 files)
+- [x] No backend/API calls introduced
+- [x] No scientific claims or analysis added
+- [x] Presentation/display only maintained
+- [x] Layer-2 constraints maintained (HTML/CSS only)
+- [x] References to Layer-0 authority preserved and enhanced
+- [x] AUTO DZ ACT present and properly labeled
+- [x] trizel-core governance link prominent (2 locations)
+- [x] Explicit Layer-2 disclaimer added
+- [x] No speculative language in main content
+- [x] Existing design structure preserved (minimal modifications)
+
+**Testing:**
+- ✓ Manual verification: viewed page via local server
+- ✓ AUTO DZ ACT marker visible in header
+- ✓ Layer-2 badge displays correctly
+- ✓ Governance links functional and prominent
+- ✓ Disclaimer section visible at top of content
+- ✓ CSS styling renders correctly
+- ✓ All semantic HTML structure preserved
+- ✓ No broken links
+- ✓ Screenshot captured for PR documentation
+
+**Visual Changes:**
+- Header now has two-column layout (brand left, meta right)
+- AUTO DZ ACT appears in monospace green text under logo
+- Green Layer-2 badge in top right
+- New blue-highlighted Layer-2 Notice section at top
+- Governance authority in blue-tinted prominent box
+- Improved spacing and visual hierarchy throughout
+- Enhanced typography and section organization
+
+**Screenshot:**
+See: https://github.com/user-attachments/assets/a97ccd0f-f425-4a3a-8003-0690b7532f96
+
+---
+
 ## Template for Future Changes
 
 ### Change Set N: [Title]
@@ -192,17 +286,17 @@ From problem statement "Work Plan":
   - [x] `docs/DESIGN_RECOMMENDATIONS.md` (additional, per extended requirements)
   - Completed: 2026-01-18
 
-- [ ] **3) Implement minimal additions**
-  - [ ] AUTO DZ ACT memory marker under logo
-  - [ ] Layer-2 disclaimer
-  - [ ] Canonical governance links
-  - [ ] Verify no forbidden terms
-  - Status: Ready to implement in next change set
+- [x] **3) Implement minimal additions**
+  - [x] AUTO DZ ACT memory marker under logo
+  - [x] Layer-2 disclaimer
+  - [x] Canonical governance links
+  - [x] Verify no forbidden terms
+  - Completed: 2026-01-18
 
 - [ ] **4) CI / Checks**
   - [ ] Run existing checks
   - [ ] Replace deprecated terms (if any)
-  - Status: Pending implementation completion
+  - Status: Ready to validate
 
 ---
 
