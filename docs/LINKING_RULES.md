@@ -378,29 +378,11 @@ Layer-3 links **MUST NOT**:
 
 ---
 
-## Governance Authority
+## Authoritative Reference
 
-All linking rules are:
-- **Subordinate to Layer-0 (trizel-core)**
-- **Aligned with layer separation model**
-- **Compliant with governance framework**
-- **Non-authoritative** — For reference only
+For complete governance authority, institutional notices, and Layer-3 constraints, see:
 
-**Layer-3 has NO decision-making power.**
-
----
-
-## Institutional Notice
-
-**Non-scientific** — This document contains no research content.
-
-**No publication** — Not citable or publishable.
-
-**No authority** — Zero decision-making power.
-
-**No execution** — No operational functions.
-
-**Display-only** — Links are for navigation and context only.
+**[LAYER_3_PHASE_DECLARATION.md](LAYER_3_PHASE_DECLARATION.md)** — Authoritative phase declaration
 
 ---
 
