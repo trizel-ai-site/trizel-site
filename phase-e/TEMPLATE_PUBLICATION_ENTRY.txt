@@ -1,0 +1,60 @@
+PHASE-E PUBLICATION ENTRY TEMPLATE
+==================================
+
+Copy this template when adding a new publication to publications.yml
+
+YAML Format (add to publications list):
+-----------------------------------------
+
+  - id: "example-paper-2026-01"
+    type: "paper"
+    immutable_url: "https://doi.org/10.XXXXX/example"
+    source: "Conference/Journal Name or Repository"
+    status: "allowlisted"
+    notes: "Example publication entry demonstrating schema format"
+
+
+HTML Table Row Format (add to phase-e/index.html table):
+----------------------------------------------------------
+
+<tr>
+  <td>example-paper-2026-01</td>
+  <td>Paper</td>
+  <td><a href="https://doi.org/10.XXXXX/example" target="_blank" rel="noopener">DOI Link</a></td>
+  <td>Conference/Journal Name or Repository</td>
+  <td>Allowlisted</td>
+</tr>
+
+
+IMPORTANT RULES:
+----------------
+1. immutable_url MUST be a permanent link:
+   - DOI (https://doi.org/...)
+   - Zenodo permalink (https://zenodo.org/record/...)
+   - GitHub tagged release (https://github.com/org/repo/releases/tag/vX.Y.Z)
+   - Institutional permalink with version identifier
+   
+2. Do NOT use:
+   - Branch URLs (branches can change)
+   - Latest release URLs (not immutable)
+   - URLs without version/commit identifiers
+   
+3. notes field must be neutral:
+   - No "best", "fastest", "most accurate"
+   - No performance claims
+   - Describe function, not results
+   
+4. Valid type values:
+   - paper
+   - report
+   - dataset
+   - doi
+   - release
+
+5. Valid status values:
+   - allowlisted
+   - verified
+   - published
+
+6. After updating publications.yml, manually mirror the entry to the HTML table.
+   No scripts, no automation.
