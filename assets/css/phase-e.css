@@ -1,0 +1,358 @@
+/* TRIZEL Phase-E — Scoped CSS
+ * Minimal styles for Phase-E publications page
+ * No external dependencies, uses design tokens only
+ */
+
+/* Phase-E Main Container */
+.phase-e-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* Status Banner (Fail-Closed) */
+.status-banner {
+  background: var(--color-notice-bg);
+  border: 2px solid var(--color-notice-border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.status-banner h3 {
+  color: var(--color-notice-heading);
+  margin: 0 0 var(--space-3) 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.status-list li {
+  color: var(--color-notice-text);
+  font-size: 0.95rem;
+}
+
+/* Governance Summary */
+.governance-summary {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.governance-summary h3 {
+  margin-top: 0;
+  color: var(--color-text);
+}
+
+.governance-summary ul {
+  margin: var(--space-4) 0 0 0;
+  padding-left: var(--space-6);
+}
+
+.governance-summary li {
+  margin: var(--space-2) 0;
+  line-height: 1.6;
+}
+
+/* What Appears Here */
+.what-appears {
+  margin: var(--space-6) 0;
+}
+
+.claim-notice {
+  background: var(--color-accent-bg);
+  border-left: 4px solid var(--color-accent);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+  border-radius: 4px;
+}
+
+/* Publications Index */
+.publications-index {
+  margin: var(--space-8) 0;
+}
+
+.registry-note {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.registry-note code {
+  background: var(--color-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Publications Table */
+.table-container {
+  overflow-x: auto;
+  margin: var(--space-5) 0;
+}
+
+.publications-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.publications-table thead {
+  background: var(--color-bg);
+}
+
+.publications-table th {
+  text-align: left;
+  padding: var(--space-4);
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.publications-table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-text-medium);
+}
+
+.publications-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty State */
+.publications-table .empty-state td {
+  text-align: center;
+  padding: var(--space-8) var(--space-5);
+}
+
+.no-publications {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.help-text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.publications-table a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.publications-table a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+/* How to Add Section */
+.how-to-add {
+  margin: var(--space-8) 0;
+}
+
+.process-steps {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-5) 0;
+}
+
+.process-steps > li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: var(--space-8);
+  margin: var(--space-5) 0;
+  line-height: 1.6;
+}
+
+.process-steps > li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.process-steps ul {
+  margin: var(--space-3) 0;
+  padding-left: var(--space-5);
+}
+
+.process-steps code {
+  background: var(--color-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* Notice Box */
+.notice-box {
+  background: var(--color-notice-bg);
+  border: 1px solid var(--color-notice-border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  margin: var(--space-5) 0;
+}
+
+.notice-box h4 {
+  margin-top: 0;
+  color: var(--color-notice-heading);
+}
+
+.notice-box ul {
+  margin: var(--space-3) 0 0 0;
+  padding-left: var(--space-6);
+}
+
+.notice-box li {
+  margin: var(--space-2) 0;
+}
+
+/* Safety & Limitations */
+.safety-limitations {
+  margin: var(--space-8) 0;
+}
+
+.prohibited-list {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  margin: var(--space-5) 0;
+}
+
+.prohibited-list h4 {
+  margin-top: 0;
+  color: var(--color-error);
+}
+
+.prohibited-list ul {
+  margin: var(--space-4) 0 0 0;
+  padding-left: var(--space-6);
+}
+
+.prohibited-list li {
+  margin: var(--space-2) 0;
+  line-height: 1.6;
+}
+
+.warning-text {
+  background: #fff8e6;
+  border-left: 4px solid #f0c744;
+  padding: var(--space-4);
+  margin: var(--space-5) 0;
+  border-radius: 4px;
+  color: var(--color-notice-text);
+}
+
+/* References */
+.references {
+  margin: var(--space-8) 0;
+}
+
+.reference-list {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+}
+
+.reference-list li {
+  margin: var(--space-3) 0;
+  line-height: 1.6;
+}
+
+.reference-list a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.reference-list a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.reference-note {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: var(--space-5) 0;
+}
+
+/* Footer Status */
+.footer-status {
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+  margin-top: var(--space-2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .phase-e-main {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .status-list {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps > li {
+    padding-left: var(--space-7);
+  }
+
+  .process-steps > li::before {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+
+  .publications-table th,
+  .publications-table td {
+    padding: var(--space-3);
+    font-size: 0.9rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .status-banner,
+  .notice-box,
+  .warning-text {
+    border: 1px solid #000;
+    background: #fff;
+  }
+
+  .publications-table {
+    page-break-inside: avoid;
+  }
+}
