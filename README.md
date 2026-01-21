@@ -8,6 +8,11 @@ This repository is **Layer-2** in the TRIZEL three-layer architecture.
 
 **Nothing in this repository constitutes a scientific publication.**
 
+## Quick Links
+
+- **[Public System Map](system-map/)** — Static documentation of TRIZEL system structure
+  - [English](system-map/index.en.md) | [Français](system-map/index.fr.md) | [العربية](system-map/index.ar.md) | [中文](system-map/index.zh.md)
+
 ## Three-Layer Architecture
 
 The TRIZEL system operates under a strict three-layer separation model:
