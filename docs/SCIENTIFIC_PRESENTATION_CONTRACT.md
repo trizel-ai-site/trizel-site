@@ -135,7 +135,7 @@ Rules:
 
 ---
 
-## 8. Automation & "T تلقائية" — Explicitly Forbidden
+## 8. Automation & "تلقائية" — Explicitly Forbidden
 
 The following are **explicitly forbidden** on the website:
 
