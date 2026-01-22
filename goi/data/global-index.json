@@ -14,73 +14,43 @@
       "repo_id": "AUTO-DZ-ACT-3I-ATLAS-DAILY",
       "repo_name": "AUTO-DZ-ACT-3I-ATLAS-DAILY",
       "owner": "abdelkader-omran",
-      "role": "raw",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "raw"
     },
     {
       "repo_id": "AUTO-DZ-ACT-ANALYSIS-3I-ATLAS",
       "repo_name": "AUTO-DZ-ACT-ANALYSIS-3I-ATLAS",
       "owner": "abdelkader-omran",
-      "role": "analysis",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "analysis"
     },
     {
       "repo_id": "trizel-AI",
       "repo_name": "trizel-AI",
       "owner": "abdelkader-omran",
-      "role": "analysis",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "analysis"
     },
     {
       "repo_id": "trizel-monitor",
       "repo_name": "trizel-monitor",
       "owner": "abdelkader-omran",
-      "role": "monitor",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "monitor"
     },
     {
       "repo_id": "trizel-lab",
       "repo_name": "trizel-lab",
       "owner": "trizel-ai-site",
-      "role": "lab",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "lab"
     },
     {
       "repo_id": "Auto-dz-act",
       "repo_name": "Auto-dz-act",
       "owner": "trizel-ai",
-      "role": "raw",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
-    },
-    {
-      "repo_id": "Auto-dz-monitor",
-      "repo_name": "Auto-dz-monitor",
-      "owner": "trizel-ai",
-      "role": "monitor",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "raw"
     },
     {
       "repo_id": "trizel-monitor-org",
       "repo_name": "trizel-monitor",
       "owner": "trizel-ai",
-      "role": "monitor",
-      "telemetry_discovered": true,
-      "telemetry_path": "/_telemetry/observation.meta.json",
-      "discovery_timestamp": "2026-01-22T23:00:00Z"
+      "role": "monitor"
     }
   ],
   "observation_ledger": [],
