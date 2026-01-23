@@ -136,60 +136,6 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   VISUAL POLISH ENHANCEMENTS
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Enhanced section headers with visual elements */
-.section-header.institutional {
-  position: relative;
-  padding-left: calc(var(--space-8) + 48px);
-  margin-bottom: var(--space-6);
-}
-
-.section-header.institutional::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 48px;
-  height: 48px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.section-header.governance::before {
-  background-image: url('../brand/icon-governance.svg');
-}
-
-.section-header.research::before {
-  background-image: url('../brand/icon-research.svg');
-}
-
-.section-header.layers::before {
-  background-image: url('../brand/icon-layers.svg');
-}
-
-.section-header.framework::before {
-  background-image: url('../brand/icon-framework.svg');
-}
-
-/* Responsive section headers */
-@media (max-width: 767px) {
-  .section-header.institutional {
-    padding-left: 0;
-    padding-top: calc(var(--space-6) + 40px);
-  }
-  
-  .section-header.institutional::before {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
    PERFORMANCE OPTIMIZATIONS
    ═══════════════════════════════════════════════════════════════ */
 

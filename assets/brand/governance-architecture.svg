@@ -12,6 +12,13 @@
       <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.6" />
       <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.3" />
     </linearGradient>
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0969da" opacity="0.6"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6366f1" opacity="0.6"/>
+    </marker>
   </defs>
   
   <!-- Layer-0: Governance -->
@@ -65,14 +72,4 @@
     <circle cx="150" cy="310" r="15" fill="none" stroke="#fff" stroke-width="2"/>
     <rect x="145" y="305" width="10" height="10" fill="none" stroke="#fff" stroke-width="1.5"/>
   </g>
-  
-  <!-- Arrow markers -->
-  <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#0969da" opacity="0.6"/>
-    </marker>
-    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#6366f1" opacity="0.6"/>
-    </marker>
-  </defs>
 </svg>
