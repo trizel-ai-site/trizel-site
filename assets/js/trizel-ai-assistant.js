@@ -8,15 +8,105 @@
  * 
  * This is a UI shell only - no AI processing happens in this repository.
  * All AI functionality is provided by external providers (implementation detail).
+ * 
+ * PHASE-F.1 MULTILINGUAL SEMANTIC LOCK APPLIED
+ * All UI strings are internationalized with semantic equivalence across:
+ * EN (canonical), FR, AR, ZH, RU, DE
  */
 
 (function() {
   'use strict';
   
+  // Global translations object - loaded from i18n/translations.json
+  let currentTranslations = null;
+  
+  /**
+   * Load translations for current language
+   */
+  async function loadTranslations() {
+    try {
+      const response = await fetch('/i18n/translations.json');
+      const allTranslations = await response.json();
+      
+      // Get current language from path or default to 'en'
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      const currentLang = pathParts[0] && allTranslations[pathParts[0]] ? pathParts[0] : 'en';
+      
+      currentTranslations = allTranslations[currentLang] || allTranslations['en'];
+      return currentTranslations;
+    } catch (error) {
+      console.error('Failed to load translations:', error);
+      // Fallback to English strings
+      return getFallbackTranslations();
+    }
+  }
+  
+  /**
+   * Get fallback English translations if loading fails
+   */
+  function getFallbackTranslations() {
+    return {
+      trizel_ai_button_aria_label: "Talk to TRIZEL-AI Assistant",
+      trizel_ai_modal_title: "Talk to TRIZEL-AI",
+      trizel_ai_close_aria_label: "Close dialog",
+      trizel_ai_governance_notice_title: "⚠️ Governance Notice",
+      trizel_ai_governance_notice_subtitle: "UI Assistant Only — Non-Authoritative",
+      trizel_ai_governance_notice_text: "This AI assistant provides navigation and explanation support only. It cannot execute, analyze, or modify data. All scientific and governance decisions remain under Layer-0 authority.",
+      trizel_ai_status_badge: "Advisory UI Assistant — Phase F.1",
+      trizel_ai_welcome_heading: "Welcome to TRIZEL-AI Assistant",
+      trizel_ai_welcome_intro: "I'm your UI assistant for navigating the TRIZEL Scientific Observatory. I can help you:",
+      trizel_ai_category_find_info: "Find Information:",
+      trizel_ai_category_find_info_desc: "Locate specific sections, documents, or references",
+      trizel_ai_category_understand: "Understand Structure:",
+      trizel_ai_category_understand_desc: "Explain the three-layer architecture and governance framework",
+      trizel_ai_category_navigate: "Navigate Content:",
+      trizel_ai_category_navigate_desc: "Guide you through the Global Observation & Production Index (GOI)",
+      trizel_ai_category_language: "Language Support:",
+      trizel_ai_category_language_desc: "Assist with multilingual content access (EN, FR, AR, ZH, RU, DE)",
+      trizel_ai_category_reference: "Reference Lookup:",
+      trizel_ai_category_reference_desc: "Point you to relevant external resources and documentation",
+      trizel_ai_limitations_heading: "What I Cannot Do",
+      trizel_ai_limitations_intro: "As a UI-only assistant operating under Phase-F governance, I am strictly limited:",
+      trizel_ai_limitation_no_exec: "❌ No Execution:",
+      trizel_ai_limitation_no_exec_desc: "Cannot perform calculations, analysis, or data processing",
+      trizel_ai_limitation_no_auth: "❌ No Authority:",
+      trizel_ai_limitation_no_auth_desc: "Cannot make scientific or governance decisions",
+      trizel_ai_limitation_no_mod: "❌ No Modification:",
+      trizel_ai_limitation_no_mod_desc: "Cannot change data, schemas, or repository content",
+      trizel_ai_limitation_no_live: "❌ No Live Data:",
+      trizel_ai_limitation_no_live_desc: "Cannot access or integrate with external systems",
+      trizel_ai_usage_heading: "How to Use",
+      trizel_ai_usage_note_label: "Note:",
+      trizel_ai_usage_note_text: "This is a UI shell component. The actual AI conversation interface is provided by external AI providers (such as GitHub Copilot, ChatGPT, or others) and is not part of this repository.",
+      trizel_ai_usage_instruction: "To interact with the AI assistant, use your preferred AI provider's interface and ask questions about the TRIZEL repository content, structure, and documentation.",
+      trizel_ai_usage_implementation: "Implementation detail: AI provider selection and integration happens outside this repository in accordance with Phase-F governance.",
+      trizel_ai_governance_heading: "Governance & Boundaries",
+      trizel_ai_governance_text_1: "This feature operates under the",
+      trizel_ai_governance_link_1: "Phase-F Governance & AI Interaction Contract",
+      trizel_ai_governance_text_2: "which establishes strict boundaries for AI interaction.",
+      trizel_ai_governance_text_3: "All operations are subject to Layer-0 governance authority maintained in the",
+      trizel_ai_governance_link_2: "trizel-core",
+      trizel_ai_governance_text_4: "repository.",
+      trizel_ai_footer_text_1: "Phase-F.1 UI Component • Governed by",
+      trizel_ai_footer_link: "Phase-F Governance Contract",
+      trizel_ai_footer_text_2: "• Layer-2 Presentation Only"
+    };
+  }
+  
+  /**
+   * Get translation string
+   */
+  function t(key) {
+    return currentTranslations && currentTranslations[key] ? currentTranslations[key] : getFallbackTranslations()[key] || key;
+  }
+  
   /**
    * Initialize TRIZEL AI Assistant UI
    */
-  function initTrizelAI() {
+  async function initTrizelAI() {
+    // Load translations first
+    await loadTranslations();
+    
     // Create and inject AI assistant button
     createAIButton();
     
@@ -33,7 +123,7 @@
   function createAIButton() {
     const button = document.createElement('button');
     button.className = 'trizel-ai-button';
-    button.setAttribute('aria-label', 'Talk to TRIZEL-AI Assistant');
+    button.setAttribute('aria-label', t('trizel_ai_button_aria_label'));
     button.setAttribute('type', 'button');
     button.id = 'trizel-ai-button';
     
@@ -69,9 +159,9 @@
               <path d="M12 8v4"></path>
               <path d="M12 16h.01"></path>
             </svg>
-            Talk to TRIZEL-AI
+            ${t('trizel_ai_modal_title')}
           </h2>
-          <button class="trizel-ai-modal-close" type="button" aria-label="Close dialog" id="trizel-ai-modal-close">
+          <button class="trizel-ai-modal-close" type="button" aria-label="${t('trizel_ai_close_aria_label')}" id="trizel-ai-modal-close">
             <svg class="trizel-ai-modal-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -83,89 +173,82 @@
           <!-- Governance Notice -->
           <div class="trizel-ai-governance-notice">
             <p class="trizel-ai-governance-notice-title">
-              ⚠️ Governance Notice
+              ${t('trizel_ai_governance_notice_title')}
             </p>
             <p class="trizel-ai-governance-notice-text">
-              <strong>UI Assistant Only — Non-Authoritative</strong><br>
-              This AI assistant provides navigation and explanation support only. 
-              It cannot execute, analyze, or modify data. All scientific and governance 
-              decisions remain under Layer-0 authority.
+              <strong>${t('trizel_ai_governance_notice_subtitle')}</strong><br>
+              ${t('trizel_ai_governance_notice_text')}
             </p>
           </div>
           
           <!-- Status Badge -->
           <div class="trizel-ai-status">
             <span class="trizel-ai-status-indicator"></span>
-            Advisory UI Assistant — Phase F.1
+            ${t('trizel_ai_status_badge')}
           </div>
           
           <!-- Main Content -->
           <div class="trizel-ai-content">
-            <h3>Welcome to TRIZEL-AI Assistant</h3>
+            <h3>${t('trizel_ai_welcome_heading')}</h3>
             
             <p>
-              I'm your UI assistant for navigating the TRIZEL Scientific Observatory. 
-              I can help you:
+              ${t('trizel_ai_welcome_intro')}
             </p>
             
             <ul>
-              <li><strong>Find Information:</strong> Locate specific sections, documents, or references</li>
-              <li><strong>Understand Structure:</strong> Explain the three-layer architecture and governance framework</li>
-              <li><strong>Navigate Content:</strong> Guide you through the Global Observation & Production Index (GOI)</li>
-              <li><strong>Language Support:</strong> Assist with multilingual content access (EN, FR, AR, ZH, RU)</li>
-              <li><strong>Reference Lookup:</strong> Point you to relevant external resources and documentation</li>
+              <li><strong>${t('trizel_ai_category_find_info')}</strong> ${t('trizel_ai_category_find_info_desc')}</li>
+              <li><strong>${t('trizel_ai_category_understand')}</strong> ${t('trizel_ai_category_understand_desc')}</li>
+              <li><strong>${t('trizel_ai_category_navigate')}</strong> ${t('trizel_ai_category_navigate_desc')}</li>
+              <li><strong>${t('trizel_ai_category_language')}</strong> ${t('trizel_ai_category_language_desc')}</li>
+              <li><strong>${t('trizel_ai_category_reference')}</strong> ${t('trizel_ai_category_reference_desc')}</li>
             </ul>
             
-            <h3>What I Cannot Do</h3>
+            <h3>${t('trizel_ai_limitations_heading')}</h3>
             
-            <p>As a UI-only assistant operating under Phase-F governance, I am strictly limited:</p>
+            <p>${t('trizel_ai_limitations_intro')}</p>
             
             <ul>
-              <li>❌ <strong>No Execution:</strong> Cannot perform calculations, analysis, or data processing</li>
-              <li>❌ <strong>No Authority:</strong> Cannot make scientific or governance decisions</li>
-              <li>❌ <strong>No Modification:</strong> Cannot change data, schemas, or repository content</li>
-              <li>❌ <strong>No Live Data:</strong> Cannot access or integrate with external systems</li>
+              <li><strong>${t('trizel_ai_limitation_no_exec')}</strong> ${t('trizel_ai_limitation_no_exec_desc')}</li>
+              <li><strong>${t('trizel_ai_limitation_no_auth')}</strong> ${t('trizel_ai_limitation_no_auth_desc')}</li>
+              <li><strong>${t('trizel_ai_limitation_no_mod')}</strong> ${t('trizel_ai_limitation_no_mod_desc')}</li>
+              <li><strong>${t('trizel_ai_limitation_no_live')}</strong> ${t('trizel_ai_limitation_no_live_desc')}</li>
             </ul>
             
-            <h3>How to Use</h3>
+            <h3>${t('trizel_ai_usage_heading')}</h3>
             
             <p>
-              <strong>Note:</strong> This is a UI shell component. The actual AI conversation interface 
-              is provided by external AI providers (such as GitHub Copilot, ChatGPT, or others) and is 
-              not part of this repository.
+              <strong>${t('trizel_ai_usage_note_label')}</strong> ${t('trizel_ai_usage_note_text')}
             </p>
             
             <p>
-              To interact with the AI assistant, use your preferred AI provider's interface and ask 
-              questions about the TRIZEL repository content, structure, and documentation.
+              ${t('trizel_ai_usage_instruction')}
             </p>
             
             <p>
-              <em>Implementation detail: AI provider selection and integration happens outside this 
-              repository in accordance with Phase-F governance.</em>
+              <em>${t('trizel_ai_usage_implementation')}</em>
             </p>
             
-            <h3>Governance & Boundaries</h3>
+            <h3>${t('trizel_ai_governance_heading')}</h3>
             
             <p>
-              This feature operates under the 
-              <a href="/PHASE_F_GOVERNANCE.md" target="_blank">Phase-F Governance & AI Interaction Contract</a>, 
-              which establishes strict boundaries for AI interaction.
+              ${t('trizel_ai_governance_text_1')} 
+              <a href="/PHASE_F_GOVERNANCE.md" target="_blank">${t('trizel_ai_governance_link_1')}</a>, 
+              ${t('trizel_ai_governance_text_2')}
             </p>
             
             <p>
-              All operations are subject to Layer-0 governance authority maintained in the 
-              <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener noreferrer">trizel-core</a> 
-              repository.
+              ${t('trizel_ai_governance_text_3')} 
+              <a href="https://github.com/trizel-ai/trizel-core" target="_blank" rel="noopener noreferrer">${t('trizel_ai_governance_link_2')}</a> 
+              ${t('trizel_ai_governance_text_4')}
             </p>
           </div>
         </div>
         
         <footer class="trizel-ai-modal-footer">
           <p class="trizel-ai-footer-text">
-            Phase-F.1 UI Component • Governed by 
-            <a href="/PHASE_F_GOVERNANCE.md" target="_blank">Phase-F Governance Contract</a> • 
-            Layer-2 Presentation Only
+            ${t('trizel_ai_footer_text_1')} 
+            <a href="/PHASE_F_GOVERNANCE.md" target="_blank">${t('trizel_ai_footer_link')}</a> 
+            ${t('trizel_ai_footer_text_2')}
           </p>
         </footer>
       </div>
