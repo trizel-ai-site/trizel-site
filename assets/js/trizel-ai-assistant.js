@@ -25,7 +25,11 @@
    */
   async function loadTranslations() {
     try {
-      const response = await fetch('/i18n/translations.json');
+      // Determine base path - handle both root and subdirectory deployments
+      const basePath = document.querySelector('base')?.href || window.location.origin;
+      const translationsPath = new URL('i18n/translations.json', basePath).href;
+      
+      const response = await fetch(translationsPath);
       const allTranslations = await response.json();
       
       // Get current language from path or default to 'en'
@@ -35,7 +39,7 @@
       currentTranslations = allTranslations[currentLang] || allTranslations['en'];
       return currentTranslations;
     } catch (error) {
-      console.error('Failed to load translations:', error);
+      console.error('[TRIZEL-AI i18n] Failed to load translations:', error);
       // Fallback to English strings
       return getFallbackTranslations();
     }
@@ -97,7 +101,12 @@
    * Get translation string
    */
   function t(key) {
-    return currentTranslations && currentTranslations[key] ? currentTranslations[key] : getFallbackTranslations()[key] || key;
+    const value = currentTranslations && currentTranslations[key] ? currentTranslations[key] : getFallbackTranslations()[key];
+    if (!value) {
+      console.warn(`[TRIZEL-AI i18n] Missing translation key: ${key}`);
+      return key;
+    }
+    return value;
   }
   
   /**
