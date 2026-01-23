@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проекты - TRIZEL</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/ru/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Институциональная Научная Обсерватория</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/ru/">Главная</a>
+        <a href="/ru/governance/">Управление</a>
+        <a href="/ru/goi/">GOI</a>
+        <a href="/ru/lab/">Лаборатория</a>
+        <a href="/ru/map/">Карта</a>
+        <a href="/ru/projects/">Проекты</a>
+        <a href="/ru/status/">Статус</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">Язык:</span>
+        <a href="/en/projects/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/projects/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/projects/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/projects/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/projects/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/projects/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="/ru/">Главная</a> › <span aria-current="page">Проекты</span>
+    </nav>
+
+    <h2>Проекты и Модули</h2>
+    
+    <section class="projects-overview">
+      <h3>Обзор</h3>
+      <p>TRIZEL работает через модульные компоненты, каждый из которых выполняет определенную роль в трехуровневой архитектуре. Проекты управляются протоколами Уровня-0 и выполняются в пределах Уровня-1.</p>
+    </section>
+
+    <section class="project-cards">
+      <h3>Активные Модули</h3>
+      
+      <div class="card">
+        <h4 class="card__title">3I/Atlas - Институциональный Интеграционный Интерфейс</h4>
+        <p class="card__description">
+          <strong>Роль:</strong> Пограничный компонент Уровня-1, обеспечивающий контролируемую интеграцию между протоколами управления и средами выполнения.
+        </p>
+        <p class="card__description">
+          <strong>Граница Уровня:</strong> Работает на интерфейсе Уровень-0/Уровень-1, обеспечивая соблюдение правил управления при одновременном выполнении авторизованных действий.
+        </p>
+        <p class="card__description">
+          <strong>Публично-Безопасное Описание:</strong> Модуль 3I/Atlas служит институциональным интеграционным интерфейсом, который переводит директивы управления в исполняемые операции, сохраняя строгое разделение обязанностей. Он гарантирует, что все действия Уровня-1 остаются в рамках, утвержденных управлением, и обеспечивает контрольные следы для институциональной подотчетности.
+        </p>
+        <p class="card__description">
+          <strong>Статус:</strong> Функционирует в соответствии с протоколами управления Фазы-F.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects-governance">
+      <h3>Структура Управления</h3>
+      <p>Все проекты работают под строгим контролем управления:</p>
+      <ul>
+        <li>Требуется одобрение Уровня-0 для инициализации всех проектов</li>
+        <li>Границы выполнения Уровня-1 обеспечиваются 3I/Atlas</li>
+        <li>Представление Уровня-2 ограничено только утвержденными результатами</li>
+        <li>Автономное выполнение невозможно без авторизации управления</li>
+      </ul>
+    </section>
+
+    <section class="projects-related">
+      <h3>Связанные Ресурсы</h3>
+      <ul>
+        <li><a href="/ru/governance/">Структура Управления</a></li>
+        <li><a href="/ru/lab/">Лабораторная Среда</a></li>
+        <li><a href="/ru/map/">Карта Системной Архитектуры</a></li>
+        <li><a href="/ru/status/">Текущее Состояние Системы</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/ru/governance/">Управление</a>
+        <a href="/ru/goi/">GOI</a>
+        <a href="/ru/map/">Карта</a>
+        <a href="/ru/lab/">Лаборатория</a>
+        <a href="/ru/projects/">Проекты</a>
+        <a href="/ru/status/">Статус</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Представление Уровня-2 • Нет Полномочий • Нет Выполнения • Контролируется Управлением</p>
+    </div>
+  </footer>
+</body>
+</html>
