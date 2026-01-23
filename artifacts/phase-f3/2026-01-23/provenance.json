@@ -1,0 +1,50 @@
+{
+  "artifact_set": "phase-f3-2026-01-23",
+  "publication_metadata": {
+    "phase": "F.3",
+    "publication_date": "2026-01-23T00:00:00Z",
+    "scope": "Institutional Statistics Archive",
+    "governance_authorization": "Layer-0 (trizel-core)"
+  },
+  "layer_separation": {
+    "layer_0_governance": {
+      "account": "trizel-ai",
+      "repository": "trizel-core",
+      "role": "Authorization and governance framework"
+    },
+    "layer_1_research": {
+      "account": "trizel-ai",
+      "repository": "trizel-lab",
+      "role": "Artifact generation and validation"
+    },
+    "layer_2_presentation": {
+      "account": "trizel-ai-site",
+      "repository": "trizel-site-artifacts",
+      "role": "Static publication and display"
+    }
+  },
+  "artifact_files": {
+    "data": [
+      "statistics.csv",
+      "statistics.json"
+    ],
+    "visualization": [
+      "chart.svg"
+    ],
+    "metadata": [
+      "provenance.json",
+      "README.md"
+    ]
+  },
+  "compliance": {
+    "static_only": true,
+    "no_javascript": true,
+    "no_analytics": true,
+    "no_external_assets": true,
+    "byte_for_byte_copy": true
+  },
+  "checksums": {
+    "algorithm": "SHA-256",
+    "note": "Checksums verify byte-for-byte integrity from Layer-1 source"
+  }
+}

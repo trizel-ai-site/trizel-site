@@ -1,0 +1,38 @@
+{
+  "generated_at_utc": "2026-01-23T00:00:00Z",
+  "phase": "F.3",
+  "scope": "Institutional Artifacts Publication",
+  "statistics": {
+    "governance": {
+      "layer_0_repositories": 1,
+      "frameworks_documented": 3,
+      "phase_f_authorization_date": "2026-01-23"
+    },
+    "research": {
+      "layer_1_repositories": 7,
+      "analysis_frameworks": 3,
+      "monitoring_systems": 2
+    },
+    "presentation": {
+      "layer_2_repositories": 1,
+      "languages_supported": 6,
+      "phase_completions": 5
+    },
+    "totals": {
+      "repositories": 9,
+      "validation_reports": 5
+    }
+  },
+  "constraints": [
+    "static_only",
+    "no_javascript",
+    "no_analytics",
+    "no_execution",
+    "governance_controlled"
+  ],
+  "provenance": {
+    "layer_1_source": "trizel-ai/trizel-lab",
+    "layer_2_destination": "trizel-ai-site/trizel-site-artifacts",
+    "publication_date": "2026-01-23"
+  }
+}

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phase F.3 Artifacts (2026-01-23) — TRIZEL</title>
-  <meta name="description" content="TRIZEL Phase F.3 Artifacts: Governance documentation and validation reports from 2026-01-23">
+  <meta name="description" content="TRIZEL Phase F.3 Institutional Artifacts: Static institutional statistics and governance documentation from 2026-01-23">
   <style>
     * {
       margin: 0;
@@ -99,18 +99,15 @@
     .file-name a {
       color: #0066cc;
       text-decoration: none;
+      font-family: 'Courier New', monospace;
     }
     .file-name a:hover {
       text-decoration: underline;
     }
-    .file-meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin: 0.25rem 0;
-    }
     .file-desc {
       margin-top: 0.5rem;
       color: #555;
+      font-size: 0.95rem;
     }
     .badge {
       display: inline-block;
@@ -120,17 +117,35 @@
       border-radius: 3px;
       margin-right: 0.5rem;
     }
-    .badge-governance {
-      background: #d1ecf1;
-      color: #0c5460;
-    }
-    .badge-validation {
+    .badge-data {
       background: #d4edda;
       color: #155724;
     }
-    .badge-documentation {
+    .badge-viz {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+    .badge-meta {
       background: #fff3cd;
       color: #856404;
+    }
+    .chart-container {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .chart-container h3 {
+      color: #0066cc;
+      margin-bottom: 1rem;
+    }
+    .chart-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      background: #fff;
     }
     footer {
       margin-top: 3rem;
@@ -149,7 +164,7 @@
 <body>
   <header>
     <h1><a href="../../../index.html" style="color: inherit; text-decoration: none;">TRIZEL</a></h1>
-    <p class="subtitle">Phase F.3 Artifacts — 2026-01-23</p>
+    <p class="subtitle">Phase F.3 Institutional Artifacts — 2026-01-23</p>
   </header>
 
   <div class="breadcrumb">
@@ -164,104 +179,102 @@
 
   <main>
     <div class="notice">
-      <h3>⚠️ Frozen Archive</h3>
-      <p><strong>Immutable Snapshot — 2026-01-23</strong></p>
-      <p>This archive contains frozen governance documentation from January 23, 2026. All files are byte-for-byte copies of the source documents. No modifications are permitted after archival.</p>
+      <h3>⚠️ Governance Notice</h3>
+      <p><strong>Static Archive — Governed / No JS / No Analytics</strong></p>
+      <p>This archive contains frozen institutional artifacts from January 23, 2026. All files are static data with no JavaScript, no analytics, and no runtime behavior. Published under Layer-0 governance authorization.</p>
     </div>
 
     <section>
-      <h2>Archive Contents (5 Files)</h2>
+      <h2>Artifact Files</h2>
       
       <ul class="file-list">
         <li class="file-item">
           <div class="file-name">
-            <span class="badge badge-governance">Governance</span>
-            <a href="PHASE_F_GOVERNANCE.md">PHASE_F_GOVERNANCE.md</a>
+            <span class="badge badge-data">Data</span>
+            <a href="statistics.csv">statistics.csv</a>
           </div>
-          <div class="file-meta">Type: Governance Framework | Size: 8,595 bytes | Lines: 262</div>
           <div class="file-desc">
-            Phase-F governance and AI interaction contract. Defines authorization scope, AI interaction boundaries, and mandatory compliance requirements for the "Talk to TRIZEL-AI" interface.
+            Tabular institutional metrics in CSV format. Contains layer distribution, repository counts, and supported features.
           </div>
         </li>
 
         <li class="file-item">
           <div class="file-name">
-            <span class="badge badge-documentation">Documentation</span>
-            <a href="PHASE_F1_MULTILINGUAL_SEMANTIC_LOCK.md">PHASE_F1_MULTILINGUAL_SEMANTIC_LOCK.md</a>
+            <span class="badge badge-data">Data</span>
+            <a href="statistics.json">statistics.json</a>
           </div>
-          <div class="file-meta">Type: Multilingual Documentation | Size: 8,192 bytes | Lines: 391</div>
           <div class="file-desc">
-            Multilingual UI string catalog and semantic lock for the "Talk to TRIZEL-AI" interface. Contains canonical English strings and verified translations for FR, AR, ZH, RU, and DE.
+            Structured institutional statistics in JSON format. Includes governance, research, and presentation layer metrics with full provenance.
           </div>
         </li>
 
         <li class="file-item">
           <div class="file-name">
-            <span class="badge badge-validation">Validation</span>
-            <a href="PHASE_F1_POST_MERGE_VALIDATION.md">PHASE_F1_POST_MERGE_VALIDATION.md</a>
+            <span class="badge badge-viz">Visualization</span>
+            <a href="chart.svg">chart.svg</a>
           </div>
-          <div class="file-meta">Type: Validation Report | Size: 11,305 bytes | Lines: 313</div>
           <div class="file-desc">
-            Post-merge validation report for Phase-F.1 deployment. Includes smoke tests across all 5 locales, governance compliance verification, and zero-defect certification.
+            Visual representation of TRIZEL layer architecture distribution. Static SVG chart showing repository distribution across three layers.
           </div>
         </li>
 
         <li class="file-item">
           <div class="file-name">
-            <span class="badge badge-validation">Completion</span>
-            <a href="PHASE_F3_COMPLETION_REPORT.md">PHASE_F3_COMPLETION_REPORT.md</a>
+            <span class="badge badge-meta">Metadata</span>
+            <a href="provenance.json">provenance.json</a>
           </div>
-          <div class="file-meta">Type: Completion Report | Date: 2026-01-23</div>
           <div class="file-desc">
-            Phase-F.3 artifacts infrastructure completion certification. Documents directory structure, governance compliance, validation criteria, and deployment verification for the artifacts archive system.
+            Publication metadata and layer separation documentation. Contains source/destination mapping and compliance verification.
           </div>
         </li>
 
         <li class="file-item">
           <div class="file-name">
-            <span class="badge badge-documentation">Manifest</span>
-            <a href="PHASE_F3_ARCHIVE_MANIFEST.md">PHASE_F3_ARCHIVE_MANIFEST.md</a>
+            <span class="badge badge-meta">Documentation</span>
+            <a href="README.md">README.md</a>
           </div>
-          <div class="file-meta">Type: Archive Manifest | Date: 2026-01-23</div>
           <div class="file-desc">
-            Archive manifest and file registry. Documents all files in this Phase-F.3 archive, their sources, purposes, sizes, and verification checksums. Provides guidelines for future archives.
+            Archive documentation describing artifact set, layer separation, institutional statistics, and governance compliance.
           </div>
         </li>
       </ul>
+    </section>
+
+    <section class="chart-container">
+      <h3>Institutional Statistics Visualization</h3>
+      <img src="chart.svg" alt="TRIZEL Institutional Statistics — Layer Architecture Distribution Chart" />
     </section>
 
     <section>
       <h2>Archive Information</h2>
       <ul style="list-style: none; padding: 0;">
-        <li style="padding: 0.5rem 0;"><strong>Archive Date:</strong> 2026-01-23</li>
-        <li style="padding: 0.5rem 0;"><strong>Archive Type:</strong> Phase-F.3 Governance and Documentation Snapshot</li>
-        <li style="padding: 0.5rem 0;"><strong>Total Files:</strong> 5</li>
-        <li style="padding: 0.5rem 0;"><strong>Total Size:</strong> ~28 KB (excluding generated files)</li>
+        <li style="padding: 0.5rem 0;"><strong>Publication Date:</strong> 2026-01-23</li>
+        <li style="padding: 0.5rem 0;"><strong>Scope:</strong> Institutional Statistics Archive</li>
+        <li style="padding: 0.5rem 0;"><strong>Total Files:</strong> 5 artifacts + 1 index</li>
         <li style="padding: 0.5rem 0;"><strong>Status:</strong> FROZEN — Immutable</li>
-        <li style="padding: 0.5rem 0;"><strong>Governance:</strong> ✅ COMPLIANT</li>
+        <li style="padding: 0.5rem 0;"><strong>Governance:</strong> ✅ Layer-0 Authorized</li>
       </ul>
     </section>
 
     <section>
-      <h2>Governance Compliance</h2>
+      <h2>Compliance</h2>
       <ul style="list-style: none; padding: 0;">
-        <li style="padding: 0.5rem 0;">✅ <strong>Static Content Only</strong> — All files are static HTML and Markdown</li>
+        <li style="padding: 0.5rem 0;">✅ <strong>Static Content Only</strong> — Pure data files, no dynamic behavior</li>
         <li style="padding: 0.5rem 0;">✅ <strong>No JavaScript</strong> — Zero client-side execution</li>
-        <li style="padding: 0.5rem 0;">✅ <strong>No Analytics</strong> — No tracking, metrics, or analytics</li>
-        <li style="padding: 0.5rem 0;">✅ <strong>No Runtime Behavior</strong> — Pure static file serving</li>
-        <li style="padding: 0.5rem 0;">✅ <strong>Byte-for-Byte Copies</strong> — Source files copied without modification</li>
-        <li style="padding: 0.5rem 0;">✅ <strong>Immutable Archive</strong> — No changes permitted after creation</li>
+        <li style="padding: 0.5rem 0;">✅ <strong>No Analytics</strong> — No tracking, metrics, or telemetry</li>
+        <li style="padding: 0.5rem 0;">✅ <strong>No External Assets</strong> — All content self-contained</li>
+        <li style="padding: 0.5rem 0;">✅ <strong>Governance-Controlled</strong> — Layer-0 authorization required</li>
       </ul>
     </section>
   </main>
 
   <footer>
     <p>
-      TRIZEL Phase F.3 Artifacts Archive (2026-01-23)<br>
+      TRIZEL Phase F.3 Institutional Artifacts (2026-01-23)<br>
       All content governed by <a href="../../../docs/SCIENTIFIC_PRESENTATION_CONTRACT.md">Scientific Presentation Contract</a>
     </p>
     <p class="meta">
-      Status: Frozen Archive | JavaScript: Disabled | Analytics: Disabled | Immutable: Yes
+      Status: Frozen Archive | JavaScript: Disabled | Analytics: Disabled | Governance: Layer-0 Authorized
     </p>
   </footer>
 </body>
