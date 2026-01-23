@@ -355,7 +355,7 @@ body {
   padding: var(--space-12) 0;
   margin-top: var(--space-16);
   text-align: center;
-  box-shadow: 0 -1px 3px 0 rgba(15, 23, 42, 0.04);
+  box-shadow: var(--shadow-reverse-sm);
 }
 
 .site-footer p {
@@ -599,7 +599,7 @@ h6 {
 /* Paragraph spacing for readability */
 p {
   margin-bottom: var(--space-4);
-  max-width: 75ch; /* Optimal reading length */
+  max-width: var(--content-max-width);
 }
 
 p:last-child {
