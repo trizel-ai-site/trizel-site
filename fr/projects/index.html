@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - TRIZEL</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/fr/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">Observatoire Scientifique Institutionnel</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/fr/">Accueil</a>
+        <a href="/fr/governance/">Gouvernance</a>
+        <a href="/fr/goi/">GOI</a>
+        <a href="/fr/lab/">Laboratoire</a>
+        <a href="/fr/map/">Carte</a>
+        <a href="/fr/projects/">Projets</a>
+        <a href="/fr/status/">Statut</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">Langue:</span>
+        <a href="/en/projects/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/projects/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/projects/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/projects/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/projects/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/projects/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="/fr/">Accueil</a> › <span aria-current="page">Projets</span>
+    </nav>
+
+    <h2>Projets & Modules</h2>
+    
+    <section class="projects-overview">
+      <h3>Aperçu</h3>
+      <p>TRIZEL fonctionne par le biais de composants modulaires, chacun servant un rôle spécifique au sein de l'architecture à trois couches. Les projets sont régis par les protocoles Couche-0 et exécutés dans les limites de Couche-1.</p>
+    </section>
+
+    <section class="project-cards">
+      <h3>Modules Actifs</h3>
+      
+      <div class="card">
+        <h4 class="card__title">3I/Atlas - Interface d'Intégration Institutionnelle</h4>
+        <p class="card__description">
+          <strong>Rôle:</strong> Composant frontière Couche-1 fournissant une intégration contrôlée entre les protocoles de gouvernance et les environnements d'exécution.
+        </p>
+        <p class="card__description">
+          <strong>Frontière de Couche:</strong> Opère à l'interface Couche-0/Couche-1, appliquant les règles de gouvernance tout en permettant les activités d'exécution autorisées.
+        </p>
+        <p class="card__description">
+          <strong>Description Publique-Sûre:</strong> Le module 3I/Atlas sert d'interface d'intégration institutionnelle qui traduit les directives de gouvernance en opérations exécutables tout en maintenant une séparation stricte des préoccupations. Il garantit que toutes les activités Couche-1 restent dans les limites approuvées par la gouvernance et fournit des pistes d'audit pour la responsabilité institutionnelle.
+        </p>
+        <p class="card__description">
+          <strong>Statut:</strong> Opérationnel sous les protocoles de gouvernance Phase-F.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects-governance">
+      <h3>Cadre de Gouvernance</h3>
+      <p>Tous les projets fonctionnent sous un contrôle de gouvernance strict :</p>
+      <ul>
+        <li>Approbation Couche-0 requise pour toute initialisation de projet</li>
+        <li>Frontières d'exécution Couche-1 appliquées par 3I/Atlas</li>
+        <li>Présentation Couche-2 limitée aux sorties approuvées uniquement</li>
+        <li>Aucune exécution autonome sans autorisation de gouvernance</li>
+      </ul>
+    </section>
+
+    <section class="projects-related">
+      <h3>Ressources Associées</h3>
+      <ul>
+        <li><a href="/fr/governance/">Cadre de Gouvernance</a></li>
+        <li><a href="/fr/lab/">Environnement de Laboratoire</a></li>
+        <li><a href="/fr/map/">Carte de l'Architecture Système</a></li>
+        <li><a href="/fr/status/">État Actuel du Système</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/fr/governance/">Gouvernance</a>
+        <a href="/fr/goi/">GOI</a>
+        <a href="/fr/map/">Carte</a>
+        <a href="/fr/lab/">Laboratoire</a>
+        <a href="/fr/projects/">Projets</a>
+        <a href="/fr/status/">Statut</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">Présentation Couche-2 • Sans Autorité • Sans Exécution • Contrôlée par la Gouvernance</p>
+    </div>
+  </footer>
+</body>
+</html>

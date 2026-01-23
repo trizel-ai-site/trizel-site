@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目 - TRIZEL</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/base.css">
+  <link rel="stylesheet" href="/assets/components.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">
+        <a href="/zh/" class="brand-link">
+          <h1>TRIZEL</h1>
+          <p class="tagline">机构科学观测站</p>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/zh/">首页</a>
+        <a href="/zh/governance/">治理</a>
+        <a href="/zh/goi/">GOI</a>
+        <a href="/zh/lab/">实验室</a>
+        <a href="/zh/map/">地图</a>
+        <a href="/zh/projects/">项目</a>
+        <a href="/zh/status/">状态</a>
+      </nav>
+      <div class="lang-switcher" role="navigation" aria-label="Language selector">
+        <span class="lang-label">语言：</span>
+        <a href="/en/projects/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/projects/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/projects/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/projects/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/projects/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/projects/" class="lang-link" lang="ar" dir="rtl">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="/zh/">首页</a> › <span aria-current="page">项目</span>
+    </nav>
+
+    <h2>项目与模块</h2>
+    
+    <section class="projects-overview">
+      <h3>概述</h3>
+      <p>TRIZEL通过模块化组件运作，每个组件在三层架构中都有特定的角色。项目由第0层协议管理，并在第1层边界内执行。</p>
+    </section>
+
+    <section class="project-cards">
+      <h3>活跃模块</h3>
+      
+      <div class="card">
+        <h4 class="card__title">3I/Atlas - 机构集成接口</h4>
+        <p class="card__description">
+          <strong>角色：</strong>第1层边界组件，在治理协议和执行环境之间提供受控集成。
+        </p>
+        <p class="card__description">
+          <strong>层边界：</strong>在第0层/第1层接口处运作，执行治理规则，同时启用授权的执行活动。
+        </p>
+        <p class="card__description">
+          <strong>公开安全描述：</strong>3I/Atlas模块作为机构集成接口，将治理指令转换为可执行操作，同时保持严格的关注点分离。它确保所有第1层活动都在治理批准的边界内，并为机构问责提供审计跟踪。
+        </p>
+        <p class="card__description">
+          <strong>状态：</strong>在Phase-F治理协议下运行。
+        </p>
+      </div>
+    </section>
+
+    <section class="projects-governance">
+      <h3>治理框架</h3>
+      <p>所有项目都在严格的治理控制下运作：</p>
+      <ul>
+        <li>所有项目初始化都需要第0层批准</li>
+        <li>第1层执行边界由3I/Atlas强制执行</li>
+        <li>第2层呈现仅限于批准的输出</li>
+        <li>没有治理授权不得自主执行</li>
+      </ul>
+    </section>
+
+    <section class="projects-related">
+      <h3>相关资源</h3>
+      <ul>
+        <li><a href="/zh/governance/">治理框架</a></li>
+        <li><a href="/zh/lab/">实验室环境</a></li>
+        <li><a href="/zh/map/">系统架构地图</a></li>
+        <li><a href="/zh/status/">当前系统状态</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <a href="/artifacts/">Artifacts</a>
+        <a href="/zh/governance/">治理</a>
+        <a href="/zh/goi/">GOI</a>
+        <a href="/zh/map/">地图</a>
+        <a href="/zh/lab/">实验室</a>
+        <a href="/zh/projects/">项目</a>
+        <a href="/zh/status/">状态</a>
+      </nav>
+      <div class="footer-citations">
+        <p>DOI: <a href="https://doi.org/10.5281/zenodo.18354752" target="_blank" rel="noopener noreferrer">10.5281/zenodo.18354752</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0003-9884-3697" target="_blank" rel="noopener noreferrer">0009-0003-9884-3697</a></p>
+      </div>
+      <p class="footer-notice">第2层呈现 • 无权限 • 无执行 • 治理控制</p>
+    </div>
+  </footer>
+</body>
+</html>
