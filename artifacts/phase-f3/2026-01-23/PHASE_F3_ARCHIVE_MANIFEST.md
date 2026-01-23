@@ -114,7 +114,7 @@ All files can be verified against their sources using standard checksums:
 
 ```bash
 # Verify file integrity (example)
-cd /home/runner/work/trizel-site-artifacts/trizel-site-artifacts
+# From repository root directory:
 sha256sum PHASE_F_GOVERNANCE.md
 sha256sum artifacts/phase-f3/2026-01-23/PHASE_F_GOVERNANCE.md
 # Both checksums should match
