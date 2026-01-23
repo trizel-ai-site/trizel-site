@@ -6,6 +6,8 @@
 **Date:** 2026-01-23  
 **Status:** 📋 Design Proposal — Awaiting Governance Approval
 
+**Governance Notice:** Design-only specification. Not authorized for implementation. Any execution or i18n changes require prior Layer-0 governance approval.
+
 ---
 
 ## 🎯 Objective
