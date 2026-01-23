@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRIZEL</title>
+  <title>系统地图 - TRIZEL</title>
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/base.css">
   <link rel="stylesheet" href="/assets/components.css">
@@ -28,33 +28,58 @@
       </nav>
       <div class="lang-switcher" role="navigation" aria-label="Language selector">
         <span class="lang-label">语言：</span>
-        <a href="/en/" class="lang-link" lang="en">EN</a>
-        <a href="/fr/" class="lang-link" lang="fr">FR</a>
-        <a href="/de/" class="lang-link" lang="de">DE</a>
-        <a href="/ru/" class="lang-link" lang="ru">RU</a>
-        <a href="/zh/" class="lang-link" lang="zh">ZH</a>
-        <a href="/ar/" class="lang-link" lang="ar" dir="rtl">AR</a>
+        <a href="/en/map/" class="lang-link" lang="en">EN</a>
+        <a href="/fr/map/" class="lang-link" lang="fr">FR</a>
+        <a href="/de/map/" class="lang-link" lang="de">DE</a>
+        <a href="/ru/map/" class="lang-link" lang="ru">RU</a>
+        <a href="/zh/map/" class="lang-link" lang="zh">ZH</a>
+        <a href="/ar/map/" class="lang-link" lang="ar" dir="rtl">AR</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <h2>TRIZEL</h2>
+    <h2>TRIZEL系统地图</h2>
     
-    <section class="overview">
-      <h3>机构科学观测站</h3>
-      <p>TRIZEL是一个由三层治理模型管理的机构科学观测站，确保机构问责制和关注点分离。</p>
+    <section class="map-overview">
+      <h3>架构可视化</h3>
+      <p>TRIZEL系统地图展示了机构科学观测站的完整架构、组件关系和治理边界。</p>
     </section>
 
-    <section class="quick-links">
-      <h3>快速访问</h3>
+    <section class="map-display">
+      <figure>
+        <img src="/system-map/trizel-system-map.svg" alt="TRIZEL系统架构地图" style="max-width: 100%; height: auto;">
+        <figcaption>TRIZEL系统架构 - 基于层的治理模型</figcaption>
+      </figure>
+    </section>
+
+    <section class="map-legend">
+      <h3>图例</h3>
+      <dl>
+        <dt>第零层（宪法）</dt>
+        <dd>治理规则、不可变约束、宪法框架</dd>
+        
+        <dt>第一层（执行）</dt>
+        <dd>私有仓库、研究环境、受控执行</dd>
+        
+        <dt>第二层（展示）</dt>
+        <dd>公共界面、只读访问、已批准输出</dd>
+        
+        <dt>GOI</dt>
+        <dd>通用对象索引 - 结构化工件目录</dd>
+        
+        <dt>实验室</dt>
+        <dd>研究和开发执行环境</dd>
+      </dl>
+    </section>
+
+    <section class="map-navigation">
+      <h3>相关资源</h3>
       <ul>
         <li><a href="/zh/governance/">治理框架</a></li>
-        <li><a href="/zh/goi/">通用对象索引（GOI）</a></li>
-        <li><a href="/zh/lab/">TRIZEL实验室</a></li>
-        <a href="/zh/map/">系统地图</a></li>
+        <li><a href="/zh/goi/">GOI访问</a></li>
+        <li><a href="/zh/lab/">实验室概述</a></li>
         <li><a href="/zh/status/">系统状态</a></li>
-        <li><a href="/zh/phase-f-governance/">Phase-F治理</a></li>
       </ul>
     </section>
   </main>
