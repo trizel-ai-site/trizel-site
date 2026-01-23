@@ -46,7 +46,7 @@ Some translated headings and governance statements are linguistically correct bu
 ```
 ┌──────────────────────────────────────────────────┐
 │  English (EN) — CANONICAL SEMANTIC AUTHORITY     │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│  ────────────────────────────────────────────────│
 │  • Authoritative source for all meanings        │
 │  • Approved by Layer-0 governance               │
 │  • Scientific terminology authority             │
@@ -58,7 +58,7 @@ Some translated headings and governance statements are linguistically correct bu
                       ↓
 ┌──────────────────────────────────────────────────┐
 │  FR, AR, ZH, RU — DERIVATIVE EQUIVALENTS         │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│  ────────────────────────────────────────────────│
 │  • Must preserve exact EN meaning               │
 │  • Technical precision over fluency             │
 │  • Glossary-based term mapping                  │
@@ -294,11 +294,11 @@ Where `{{glossary.*}}` references are resolved from `/i18n/glossary.json` canoni
 
 **Challenge:** Modern Standard Arabic (MSA) has strong literary traditions that prioritize eloquence over technical precision. TRIZEL requires the opposite.
 
-**Solution:** Arabic translations must use **formal scientific Arabic** (لغة علمية رسمية), even if less "smooth" for casual readers.
+**Solution:** Arabic translations must use **formal scientific Arabic** (لغة علمية رسمية / lugha 'ilmiyya rasmiyya - "formal scientific language"), even if less "smooth" for casual readers.
 
 #### Scientific Arabic Guidelines
 
-1. **Use Modern Standard Arabic (MSA)**, not dialectal variants
+1. **Use Modern Standard Arabic (MSA / الفصحى الحديثة)**, not dialectal variants
 2. **Prioritize technical vocabulary** from scientific/academic contexts
 3. **Preserve loan words** when Arabic equivalents introduce ambiguity
 4. **Accept grammatical formality** over conversational style
@@ -314,10 +314,10 @@ Where `{{glossary.*}}` references are resolved from `/i18n/glossary.json` canoni
 
 | English Term | ❌ Avoid (Ambiguous) | ✅ Prefer (Precise) |
 |--------------|---------------------|---------------------|
-| Repository | مستودع (warehouse/storage) | مستودع الكود (code repository) OR ريبوزيتوري (loan word) |
-| Layer-0 | الطبقة صفر | Layer-0 (preserve English, explain in context) |
-| Snapshot | لقطة (photo) | نسخة ثابتة (frozen copy) OR سنابشوت |
-| Phase E | المرحلة إي | Phase E (preserve English phase identifier) |
+| Repository | مستودع / mustawda' (warehouse/storage — ambiguous) | مستودع الكود / mustawda' al-kood (code repository) OR ريبوزيتوري (loan word) |
+| Layer-0 | الطبقة صفر / al-tabaqa sifr (ambiguous layer reference) | Layer-0 (preserve English, explain in context) |
+| Snapshot | لقطة / laqta (photo — imprecise) | نسخة ثابتة / nuskha thabita (frozen copy) OR سنابشوت (loan word) |
+| Phase E | المرحلة إي / al-marhala E (ambiguous phase) | Phase E (preserve English phase identifier) |
 
 **Rationale:** Governance documents require unambiguous interpretation. If Arabic technical terms are ambiguous, scientific convention permits loan words with Arabic morphology.
 
@@ -337,20 +337,20 @@ Where `{{glossary.*}}` references are resolved from `/i18n/glossary.json` canoni
 
 | Context | ❌ Conversational | ✅ Formal Scientific |
 |---------|------------------|---------------------|
-| "No execution" | لا يعمل (doesn't work) | لا قدرة تنفيذية (no execution capability) |
-| "Read-only" | للقراءة فقط (for reading only) | قراءة فقط، غير قابل للتعديل (read-only, not modifiable) |
+| "No execution" | لا يعمل / la ya'mal (doesn't work — imprecise) | لا قدرة تنفيذية / la qudra tanfidhiyya (no execution capability — precise) |
+| "Read-only" | للقراءة فقط / lil-qira'a faqat (for reading only — informal) | قراءة فقط، غير قابل للتعديل / qira'a faqat, ghayr qabil lil-ta'dil (read-only, not modifiable — formal) |
 
 #### Constraint 3: Governance Language Consistency
 
 **Rule:** All governance disclaimers must use identical phrasing within a language.
 
 **Anti-pattern:**
-- Page 1: "هذا المستودع للعرض فقط" (This repository is for display only)
-- Page 2: "هذا النظام لا ينفذ أي عمليات" (This system does not execute operations)
-- Page 3: "لا توجد قدرات تنفيذية" (No execution capabilities exist)
+- Page 1: "هذا المستودع للعرض فقط" / hadha al-mustawda' lil-'ard faqat (This repository is for display only)
+- Page 2: "هذا النظام لا ينفذ أي عمليات" / hadha al-nizam la yunaffidh ayy 'amaliyyat (This system does not execute operations)
+- Page 3: "لا توجد قدرات تنفيذية" / la tujad qudrat tanfidhiyya (No execution capabilities exist)
 
 **Correct pattern:**
-- All pages: Identical phrasing from glossary for "no execution" → "لا قدرة تنفيذية"
+- All pages: Identical phrasing from glossary for "no execution" → "لا قدرة تنفيذية" / la qudra tanfidhiyya (no execution capability)
 
 ### 4.3 UX Smoothness Trade-Off (Acceptable)
 
