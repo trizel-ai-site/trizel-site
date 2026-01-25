@@ -5,7 +5,8 @@
 **Status:** PHASE F ACTIVE  
 **Authority:** Layer-0 Governance (trizel-core)  
 **Phase E:** CLOSED — Superseded by Phase F authorization
-
+**Current Layer-2 baseline:** `layer-2-baseline-v1`  
+(Immutable reference after Gate ONE and Digital Quality Pack v1)
 This repository operates under **Phase F governance framework**. See [PHASE_F_GOVERNANCE.md](PHASE_F_GOVERNANCE.md) for complete governance framework and AI interaction boundaries.
 
 ---
